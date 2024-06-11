@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập JS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header class="container">
+      <h1 class="mx-auto text-center text-white bg-black rounded w-50 my-5">
+        BÀI TẬP JS - phần 1
+      </h1>
+      <br />
+      <h2 class="mx-auto text-center text-danger w-25 mb-5">
+        ** Có tiến hành bắt lỗi
+      </h2>
+    </header>
+
+    <!-- Bài 1: TÍNH TIỀN LƯƠNG NHÂN VIÊN 
+    Lương 1 ngày: 100.000 vnđ 
+    Cho người dùng nhập vào số ngày làm 
+    Công thức tính lương: Lương 1 ngày * số ngày làm -->
+
+    <section class="container">
+      <h3 class="mt-5">
+        Bài 1: Tính lương nhân viên, với số lương 1 ngày = 100.000 vnđ, yêu cầu
+        người dùng nhập vào số ngày lương và tính tổng lương.
+      </h3>
+      <div class="card w-25 mt-4">
+        <div class="card-header text-center text-white bg-success">
+          Tiền lương nhân viên
+        </div>
+        <div class="card-body">
+          <p>Lương cơ bản: 100.000 vnđ/ngày</p>
+          <div class="d-flex align-items-center justify-content-center">
+            <p class="pt-2 me-3">Số ngày lương của bạn:</p>
+            <input class="w-25" type="number" id="soNgayLuong" />
+          </div>
+        </div>
+        <div class="card-footer">
+          <button
+            id="tinhLuong"
+            class="bg-success text-white text-center rounded p-2 border-0"
+            onclick="tinhLuongTheoNgay()"
+          >
+            Tính lương
+          </button>
+          <br />
+          <span class="text-white" id="tinhLuongNhanVien"></span>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <!-- BÀI 2: TÍNH GIÁ TRỊ TRUNG BÌNH 
+    Cho người dùng nhập vào 5 số thực. Xuất ra
+    màn hình giá trị trung bình của 5 số này -->
+
+    <section class="container">
+      <h3 class="mt-5">
+        Bài 2: Tính giá trị trung bình của 5 số thực nhập vào.
+      </h3>
+      <div class="card w-50 mt-4">
+        <div class="card-header text-center text-white bg-success">
+          Tính giá trị trung bình
+        </div>
+        <div class="card-body">
+          <p>Nhập số liệu dưới đây</p>
+          <div>
+            <input type="number" class="w-25 my-2 me-3" id="n1" /><input
+              type="number"
+              class="w-25 me-3"
+              id="n2"
+            /><input type="number" class="w-25" id="n3" /><input
+              type="number"
+              class="w-25 my-2 me-3"
+              id="n4"
+            /><input type="number" class="w-25" id="n5" />
+          </div>
+        </div>
+        <div class="card-footer d-flex align-items-center">
+          <button
+            class="bg-success text-white text-center rounded p-2 border-0 me-3"
+            onclick="tinhTrungBinh()"
+          >
+            Tính trung bình
+          </button>
+          <span id="trungBinh"></span>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <!-- Bài 3: QUY ĐỔI MỆNH GIÁ TỪ $ SANG vnđ
+    Cho 1$ = 23.500 vnđ, yêu cầu người dùng nhập vào số $ 
+    để quy đổi mệnh giá sang tiền vnđ -->
+
+    <section class="container">
+      <h3 class="mt-5">
+        Bài 3: Quy đổi mệnh giá, với 1$ = 23.500 vnđ, cho người dùng nhập vào số
+        $ để tiến hành đổi sang mệnh giá vnđ.
+      </h3>
+      <div class="card w-25 mt-3">
+        <div class="card-header bg-success text-white text-center">
+          Quy đổi tiền tệ
+        </div>
+        <div class="card-body">
+          <p>- 1$ = 23.500 vnđ</p>
+          <p>Mời nhập số $ bạn cần đổi:</p>
+          <input type="number" class="w-75" id="soDollar" />
+        </div>
+        <div class="card-footer">
+          <button
+            class="bg-success text-white text-center rounded border-0 p-2"
+            onclick="quyDoiTien()"
+          >
+            Đổi tiền</button
+          ><br />
+          <span id="soVND"></span>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <!-- Bài 4: TÍNH CHU VI, DIỆN TÍCH HÌNH CHỮ NHẬT 
+    Nhập vào chiều dài, chiều rộng;
+    yêu cầu tính chu vi, diện tích hình chữ nhật đó
+    Chu vi: (dài + rộng) * 2
+    Diện tích: dài * rộng -->
+
+    <section class="container">
+      <h3 class="mt-5">
+        Bài 4: Tính chu vi, diện tích hình chữ nhật, nhập vào chiều dài, chiều
+        rộng. Xuất ra chu vi và diện tích.
+      </h3>
+      <div class="card w-25 mt-3">
+        <div class="card-header bg-success text-white text-center">
+          Tính chu vi, diện tích hình chữ nhật
+        </div>
+        <div class="card-body">
+          <p>Nhập chiều dài:</p>
+          <input type="number" class="w-75 mb-2" id="chieuDai" />
+          <p>Nhập chiều rộng:</p>
+          <input type="number" class="w-75" id="chieuRong" />
+        </div>
+        <div class="card-footer">
+          <button
+            class="bg-success text-white text-center rounded border-0 p-2"
+            onclick="tinhChuViDienTich()"
+          >
+            Tính chu vi, diện tích
+          </button>
+          <br />
+          <span id="chuVi"></span>
+          <br id="breakLine" style="display: none" />
+          <span id="dienTich"></span>
+          <span id="baoLoi"></span>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <!-- BÀI 5: TÍNH TỔNG 2 KÝ SỐ 
+    Nhập vào 2 ký số, tính tổng 2 ký số đó -->
+
+    <section class="container">
+      <h3 class="mt-5">
+        Bài 5: Tính tổng 2 ký số của 1 số, nhập vào số gồm 2 ký số, tính tổng 2
+        ký số đó.
+      </h3>
+      <div class="card w-25 mt-3">
+        <div class="card-header bg-success text-white text-center">
+          Tính tổng 2 ký số
+        </div>
+        <div class="card-body d-flex align-items-center">
+          <p class="me-3 pt-2">Nhập số:</p>
+          <input type="number" id="kySo" class="w-25" />
+        </div>
+        <div class="card-footer">
+          <button
+            class="bg-success text-white text-center rounded border-0 p-2"
+            onclick="tinhTongKySo()"
+          >
+            Tính tổng ký số</button
+          ><br />
+          <span id="tongKySo"></span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../js/index.js"></script>
+  </body>
+</html>
